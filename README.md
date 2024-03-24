@@ -1,4 +1,3 @@
 # CSharp beadandó
----
-> Név: Nyíri Dániel
+> Név: Nyíri Dániel<br>
 > NK: AUGHMI
