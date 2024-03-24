@@ -1,0 +1,35 @@
+# list
+# ----------------------------------
+  Listing the employees in a table.
+  $ list
+  $ ls
+
+# add
+# ----------------------------------
+  Adding new employee to the Company
+  $ add {lname fname} {password}
+  $ a {lname fname} {password}
+
+# delete
+# ----------------------------------
+  Removing employee from the Company
+  $ delete {id}
+  $ dde {id}
+
+# balance
+# ----------------------------------
+  Modifing the employee balance.
+  $ balance {id} {price}
+  $ b {id} {price}
+
+# clear
+# ----------------------------------
+  Cleaning up the console.
+  $ clear
+  $ c
+
+# logout
+# ----------------------------------
+  Exiting from the admin CLI.
+  $ logout
+  $ lo

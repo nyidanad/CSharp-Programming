@@ -1,0 +1,41 @@
+# buy
+# ----------------------------------
+  Buying a tool.
+  $ buy {item} {?amount}
+  $ b {item} {?amount}
+
+# sell
+# ----------------------------------
+  Sell a tool from your storage.
+  Works only inside your storage!
+  $ sell {item} {?amount}
+  $ s {item} {?amount}
+
+# info
+# ----------------------------------
+  Information about a tool.
+  $ info {item}
+  $ i {item}
+
+# store
+# ----------------------------------
+  Going back to the shop.
+  Works only inside your storage!
+  $ store
+
+# storage
+# ----------------------------------
+  Opening your storage.
+  $ storage
+
+# password
+# ----------------------------------
+  Changing your password.
+  $ password
+  $ pw
+
+# logout
+# ----------------------------------
+  Logging out from your account.
+  $ logout
+  $ lo

@@ -1,0 +1,19 @@
+Walkie-talkie, 12
+Flashlight, 15
+Shovel, 30
+Lockpicker, 20
+Pro-flashlight, 25
+Stun granade, 40
+Boombox, 60
+TZP-Inhalant, 120
+Zap gun, 400
+Jetpack, 700
+Extension ladder, 60
+Radar-booster, 50
+Spray paint, 50
+
+SHIP UPGRAGES:
+Loud horn, 100
+Signal translator, 375
+Teleporter, 425
+Inverse teleporter, 255
