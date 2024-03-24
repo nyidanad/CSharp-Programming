@@ -3,10 +3,10 @@
 ### Parancsok
 ---
 LIST
-> [!info]
+> [!INFO]
 > **ONLY ADMIN**
 > Munkás felvétele felhasználónév, jelszó alapján.
-> > [!example]
+> > [!EXAMPLE]
 > > $ list
 > > $ ls
 
