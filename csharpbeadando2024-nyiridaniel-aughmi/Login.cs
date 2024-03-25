@@ -8,6 +8,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         public static void LoginMain()
         {
             Console.ForegroundColor = ConsoleColor.Green;
+
             string name = "";
             string password = "";
             bool authentication = false;

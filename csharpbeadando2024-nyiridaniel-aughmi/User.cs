@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
@@ -10,14 +11,15 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 {
     internal class User
     {
-        public static void UserMain(string name)
+        public static void UserMain(string nickname)
         {
+            List<Item> items = new List<Item>();
+
             bool exit = false;
-            string nickname = name;
 
             do
             {
-                loadShop();
+                loadShop(nickname, items);
                 Console.Write("\n$ ");
                 string[] prompt = Console.ReadLine().Split(' ');
 
@@ -31,6 +33,14 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
                     case "buy":
                     case "b":
+                        if (prompt.Length == 3)
+                        {
+                            Buy(prompt[1], prompt[2], items);
+                        }
+                        else if (prompt.Length == 2)
+                        {
+                            Buy(prompt[1], "1", items);
+                        }
                         break;
 
 
@@ -48,19 +58,6 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                     case "pw":
                         Password(nickname);
                         break;
-
-                    //case "add":
-                    //case "a":
-                    //    if (prompt.Length == 4)
-                    //    {
-                    //        string name = prompt[1] + " " + prompt[2];
-                    //        AddEmployee(name, prompt[3], employees);
-                    //    }
-                    //    else
-                    //    {
-                    //        Program.Warning("Invalid syntax! Try 'help' command.\n");
-                    //    }
-                    //    break;
                         
 
                     case "logout":
@@ -82,17 +79,45 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
 
         // ~ LOAD SHOP
-        public static void loadShop()
+        public static void loadShop(string nickname, List<Item> items)
         {
-            List<Item> items = new List<Item>();
-            List<string> headers = new List<string>();
+            items.Clear();
+            int balance = 0;
 
+            // ~ READ EMPLOYEE DATAS
+            try
+            {
+                string[] files = Directory.GetFiles("../../employees/", "*.txt");
 
-            // ~READ TOOLS FROM ITEMS.TXT
-            // ~FILL UP ITEMS ARRAY
+                foreach (string file in files)
+                {
+                    if (nickname == Path.GetFileNameWithoutExtension(file))
+                    {
+                        string[] lines = File.ReadAllLines(file);
+                        balance = Convert.ToInt32(lines[2]);
+                    }
+                }
+            }
+            catch (DirectoryNotFoundException)
+            {
+                Console.WriteLine("Employees directory not found!");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("Employee file(s) not found!");
+            }
+
+            // ~ READ TOOLS FROM ITEMS.TXT
+            // ~ FILL UP ITEMS ARRAY
             try
             {
                 Console.Clear();
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine($" {balance} \n");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Green;
+
                 Console.WriteLine("Welcome to the Company store.");
                 Console.WriteLine("Use words BUY and INFO on any item.");
                 Console.WriteLine("Order tools in bulk by typing a number.");
@@ -133,6 +158,46 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             string help = File.ReadAllText("../../helpuser.txt");
             Console.WriteLine(help);
             Console.ReadKey();
+        }
+
+
+        public static void Buy(string chosenTool, string chosenAmount, List<Item> items)
+        {
+            bool found = false;
+
+            foreach (Item item in items)
+            {
+                string[] tools = item.ToString().ToLower().Split(new string[] { "//" }, StringSplitOptions.None);
+                string tool = tools[0].TrimStart('*', ' ').TrimEnd(' ');
+                int price = Convert.ToInt32(tools[1].Replace(" price: ", ""));
+                int amount = Convert.ToInt32(chosenAmount);
+
+                //int price = Convert.ToInt32(tools[1]);
+
+                if (tool.StartsWith(chosenTool))
+                {
+                    Confirm(tool, price, amount);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                Program.Warning("Invalid tool! Plese check the shop.\n");
+                Console.ReadKey();
+            }
+        }
+
+
+        // ~ CONFIRM PURCHASE
+        public static void Confirm(string tool, int price, int amount)
+        {
+            Console.Clear();
+            Console.WriteLine($"You have requested to order {tool}. Amount: {amount}");
+            Console.WriteLine($"Total cost of items: {price * amount}\n");
+            Console.WriteLine("Please CONFIRM or DENY.\n");
+            string choice = Console.ReadLine();
         }
 
 
