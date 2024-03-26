@@ -11,6 +11,18 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         }
 
 
+        // ~ SUCCESS MESSAGE
+        public static void Success(string message)
+        {
+            SoundPlayer warning = new SoundPlayer("../../sounds/success.wav");
+            warning.Play();
+            Console.BackgroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(message);
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.Green;
+        }
+
 
         // ~ WARNING MESSAGE
         public static void Warning(string message)
@@ -23,5 +35,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.Green;
         }
+
+        
     }
 }

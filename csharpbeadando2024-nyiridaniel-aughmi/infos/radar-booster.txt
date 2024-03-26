@@ -1,0 +1,10 @@
+RADAR-BOOSTER
+---------------------------------------------
+Radar boosters come with many uses!
+Use the "SWITCH" command before the radar 
+booster's name to view it on the main monitor. 
+It must be activated.
+
+Use the "PING" command before the radar 
+booster's name to play a special sound 
+from the device.

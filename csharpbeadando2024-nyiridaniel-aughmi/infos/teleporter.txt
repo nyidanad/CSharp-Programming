@@ -1,0 +1,8 @@
+TELEPORTER
+-----------------------------------------------
+Press the button to activate the teleporter. 
+It will teleport whoever is currently being 
+monitored on the ship's radar. They will not 
+be able to keep any of their held items through 
+the teleport. It takes about ten seconds to 
+recharge.

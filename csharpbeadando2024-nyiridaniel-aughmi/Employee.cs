@@ -8,15 +8,15 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 {
     internal class Employee
     {
-        private string Eid { get; set; }
-        private string Name { get; set; }
-        private int Balance { get; set; }
+        private string eid;
+        private string name;
+        private int balance;
 
         public Employee(string eid, string name, int balance)
         {
-            Eid = eid;
-            Name = name;
-            Balance = balance;
+            this.eid = eid;
+            this.name = name;
+            this.balance = balance;
         }
 
         public override string ToString()
@@ -24,8 +24,23 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             return $"[{Eid}] {Name} // {Balance}";
         }
 
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
 
+        public string Eid
+        {
+            get { return eid; }
+            set { eid = value; }
+        }
 
+        public int Balance
+        {
+            get { return balance; }
+            set { balance = value; }
+        }
 
     }
 }

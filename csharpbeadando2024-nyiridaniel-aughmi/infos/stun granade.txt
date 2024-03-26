@@ -1,0 +1,6 @@
+STUN GRANADE
+-------------------------------------------
+A non-lethal explosive that will stun most 
+creatures for 5 seconds. Once the striker 
+lever is removed, the grenade will detonate 
+after 3 seconds.

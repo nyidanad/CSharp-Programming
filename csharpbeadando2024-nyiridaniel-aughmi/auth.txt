@@ -4,7 +4,4 @@ nyidan2, asd
 nyidan3, asd
 nyidan4, asd
 petsan1, asd
-petsan2, asd
-petsan4, asd
-hunjan1, asd
 

@@ -1,0 +1,14 @@
+INVERSE TELEPORTER
+------------------------------------------------
+The inverse teleporter is a modified teleporter 
+which will teleport you to a random position 
+outside the ship. All your items will be dropped 
+at the teleporter before transport. The inverse 
+teleporter can be used by everyone at once and 
+has a 3.5 minute cooldown.
+
+DISCLAIMER: The inverse teleporter can only 
+transport you in, not out, and you may become 
+trapped. The Company is not responsible for 
+injury or replacement of heads and limbs induced 
+by quantum entanglement and bad luck.

@@ -24,26 +24,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                     Console.Write("name: ");
                     name = Console.ReadLine();
                     Console.Write("password: ");
-
-
-                    // ~ CHECK EVERY KEY THAT'VE BEEN PRESSED
-                    // ~ PRINT * INSTEAD OF PASSWORD
-                    ConsoleKeyInfo key;
-                    do
-                    {
-                        key = Console.ReadKey(true);
-
-                        if (!char.IsControl(key.KeyChar) && key.Key != ConsoleKey.Enter)
-                        {
-                            password += key.KeyChar;
-                            Console.Write("*");
-                        }
-                        else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
-                        {
-                            password = password.Substring(0, password.Length - 1);
-                            Console.Write("\b \b");
-                        }
-                    } while (key.Key != ConsoleKey.Enter);
+                    password = Password();
 
 
                     // ~ CHECK AUTHENTICATION
@@ -85,6 +66,33 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                     User.UserMain(name);
                     break;
             }
+        }
+
+
+        // ~ CHECK EVERY KEY THAT'VE BEEN PRESSED
+        // ~ PRINT * INSTEAD OF PASSWORD
+        public static string Password()
+        {
+            
+            ConsoleKeyInfo key;
+            string password = "";
+            do
+            {
+                key = Console.ReadKey(true);
+
+                if (!char.IsControl(key.KeyChar) && key.Key != ConsoleKey.Enter)
+                {
+                    password += key.KeyChar;
+                    Console.Write("*");
+                }
+                else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password = password.Substring(0, password.Length - 1);
+                    Console.Write("\b \b");
+                }
+            } while (key.Key != ConsoleKey.Enter);
+
+            return password;
         }
     }
 }

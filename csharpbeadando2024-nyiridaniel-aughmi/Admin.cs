@@ -197,13 +197,11 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 // ~ADD THE NEW EMPLOYEE TO AUTH.TXT
                 string auth = $"{nickname}, {password}\n";
                 File.AppendAllText("../../auth.txt", auth);
-                Console.WriteLine($"User: {nickname} added successfully!\n");
-
-
+                
                 //// ~ ADD THE NEW EMPLOYEE TO EMPLOYEES
                 string text = $"{key}\n{name}\n{0}\n";
                 File.WriteAllText($"../../employees/{nickname}.txt", text);
-
+                Program.Success($"User: {nickname} added successfully!\n");
 
                 // ~ RELOADING THE EMPLOYEES
                 LoadEmployees(employees);
@@ -256,7 +254,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 }
 
                 File.WriteAllLines("../../auth.txt", tmp);
-                Console.WriteLine($"{nickname} deleted successfully!\n");
+                Program.Success($"{nickname} deleted successfully!\n");
 
 
                 // ~ RELOADING THE EMPLOYEES
@@ -295,7 +293,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
                 string text = $"{key}\n{name}\n{balance}\n";
                 File.WriteAllText($"../../employees/{nickname}.txt", text);
-                Console.WriteLine($"{nickname} balance updated successfully!\n");
+                Program.Success($"{nickname} balance updated successfully!\n");
 
                 // ~ RELOADING THE EMPLOYEES
                 LoadEmployees(employees);

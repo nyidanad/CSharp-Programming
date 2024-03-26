@@ -1,0 +1,6 @@
+WALKIE TALKIE
+-----------------------------------------------
+Useful for keeping in touch! Hear other players 
+when the walkie talkie is in your inventory. 
+Must be in your hand and pressed down to 
+transmit voice.

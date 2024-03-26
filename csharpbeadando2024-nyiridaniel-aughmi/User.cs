@@ -2,10 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace csharpbeadando2024_nyiridaniel_aughmi
 {
@@ -14,77 +16,98 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         public static void UserMain(string nickname)
         {
             List<Item> items = new List<Item>();
-
+            Employee employee;
             bool exit = false;
+
 
             do
             {
-                loadShop(nickname, items);
+                bool found = false;
+                employee = loadEmployee(nickname);
+                loadShop(employee, items);
                 Console.Write("\n$ ");
                 string[] prompt = Console.ReadLine().Split(' ');
 
-                switch (prompt[0])
+
+                // ~ BUY, INFO PROMPT
+                if (prompt[0].Length > 2)
                 {
-                    case "help":
-                    case "h":
-                        Help();
-                        break;
-
-
-                    case "buy":
-                    case "b":
-                        if (prompt.Length == 3)
+                    foreach (Item item in items)
+                    {
+                        if (item.Tool.ToLower().StartsWith(prompt[0].ToLower()))
                         {
-                            Buy(prompt[1], prompt[2], items);
+                            found = true;
+
+                            if (prompt.Length == 2)
+                            {
+                                if (prompt[1] == "i" || prompt[1] == "info")
+                                {
+                                    Info(item.Tool.ToLower());
+                                    break;
+
+                                }
+                                else
+                                {
+                                    Buy(prompt[0], prompt[1], nickname, items, employee);
+                                    break;
+                                }
+                            }
+                            else if (prompt.Length == 1)
+                            {
+                                Buy(prompt[0], "1", nickname, items, employee);
+                                break;
+                            }
                         }
-                        else if (prompt.Length == 2)
-                        {
-                            Buy(prompt[1], "1", items);
-                        }
-                        break;
+                    }
+                }
+                
+
+                // ~ OTHER PROMPTS
+                if (!found)
+                {
+                    switch (prompt[0])
+                    {
+                        case "help":
+                        case "h":
+                            Help();
+                            break;
 
 
-                    case "info":
-                    case "i":
-                        break;
+                        case "storage":
+                        case "st":
+                            break;
 
 
-                    case "storage":
-                    case "st":
-                        break;
-
-
-                    case "password":
-                    case "pw":
-                        Password(nickname);
-                        break;
+                        case "password":
+                        case "pw":
+                            Password(nickname);
+                            break;
                         
 
-                    case "logout":
-                    case "lo":
-                        exit = true;
-                        Console.Clear();
-                        break;
+                        case "logout":
+                        case "lo":
+                            exit = true;
+                            Console.Clear();
+                            break;
 
 
-                    default:
-                        Program.Warning($"Invalid command: '{prompt[0]}'! Try the 'help' command.\n");
-                        Console.ReadKey();
-                        break;
+                        default:
+                            Program.Warning($"Invalid command! Try the 'help' command.");
+                            Console.ReadKey();
+                            break;
+                    }
                 }
             } while (!exit);
 
             Program.Main();
         }
 
-
-        // ~ LOAD SHOP
-        public static void loadShop(string nickname, List<Item> items)
+        // ~ LOAD EMPLOYEE DATAS
+        public static Employee loadEmployee(string nickname)
         {
-            items.Clear();
+            string name = "";
             int balance = 0;
 
-            // ~ READ EMPLOYEE DATAS
             try
             {
                 string[] files = Directory.GetFiles("../../employees/", "*.txt");
@@ -94,6 +117,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                     if (nickname == Path.GetFileNameWithoutExtension(file))
                     {
                         string[] lines = File.ReadAllLines(file);
+                        name = lines[1];
                         balance = Convert.ToInt32(lines[2]);
                     }
                 }
@@ -107,6 +131,16 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 Console.WriteLine("Employee file(s) not found!");
             }
 
+            Employee employee = new Employee(nickname, name, balance);
+            return employee;
+        }
+
+
+        // ~ LOAD SHOP
+        public static void loadShop(Employee employee, List<Item> items)
+        {
+            items.Clear();
+
             // ~ READ TOOLS FROM ITEMS.TXT
             // ~ FILL UP ITEMS ARRAY
             try
@@ -114,7 +148,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 Console.Clear();
                 Console.BackgroundColor = ConsoleColor.Green;
                 Console.ForegroundColor = ConsoleColor.Black;
-                Console.WriteLine($" {balance} \n");
+                Console.WriteLine($" {employee.Balance} \n");
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.Green;
 
@@ -161,7 +195,8 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         }
 
 
-        public static void Buy(string chosenTool, string chosenAmount, List<Item> items)
+        // ~ PROMPT: BUY
+        public static void Buy(string chosenTool, string chosenAmount, string nickname, List<Item> items, Employee employee)
         {
             bool found = false;
 
@@ -172,12 +207,20 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 int price = Convert.ToInt32(tools[1].Replace(" price: ", ""));
                 int amount = Convert.ToInt32(chosenAmount);
 
-                //int price = Convert.ToInt32(tools[1]);
-
                 if (tool.StartsWith(chosenTool))
                 {
-                    Confirm(tool, price, amount);
                     found = true;
+
+                    if (employee.Balance >= (price * amount))
+                    {
+                        Confirm(tool, price, amount, nickname, employee);
+                    }
+                    else
+                    {
+                        Program.Warning("Not enough money to purchase!");
+                        Console.ReadKey();
+                    }
+                    
                     break;
                 }
             }
@@ -191,13 +234,133 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
 
         // ~ CONFIRM PURCHASE
-        public static void Confirm(string tool, int price, int amount)
+        public static void Confirm(string tool, int price, int amount, string nickname, Employee employee)
         {
-            Console.Clear();
-            Console.WriteLine($"You have requested to order {tool}. Amount: {amount}");
-            Console.WriteLine($"Total cost of items: {price * amount}\n");
-            Console.WriteLine("Please CONFIRM or DENY.\n");
-            string choice = Console.ReadLine();
+            bool exit = false;
+
+            do
+            {
+                Console.Clear();
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+                Console.WriteLine($" {employee.Balance} \n");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.Green;
+
+                Console.WriteLine($"You have requested to order {tool}. Amount: {amount}");
+                Console.WriteLine($"Total cost of items: {price * amount}\n");
+                Console.WriteLine("Please CONFIRM or DENY.");
+                Console.Write("\n$ ");
+                string prompt = Console.ReadLine();
+
+                switch (prompt)
+                {
+                    case "confirm":
+                    case "c":
+                        exit = true;
+
+                        try
+                        {
+                            string[] fileData = File.ReadAllLines($"../../employees/{nickname}.txt");
+                            List<string> tmp = new List<string>();
+
+                            for (int i = 0; i < fileData.Length; i++)
+                            {
+                                if (i == 2)
+                                {
+                                    tmp.Add((Convert.ToInt32(fileData[i]) - (price * amount)).ToString());
+                                    continue;
+                                }
+                                tmp.Add(fileData[i]);
+                                
+                            }
+
+                            File.WriteAllLines($"../../employees/{nickname}.txt", tmp);
+                            
+
+                            Transfer(tool, amount, nickname);
+                        }
+                        catch (DirectoryNotFoundException)
+                        {
+                            Console.WriteLine("Employees directory not found!");
+                        }
+                        catch (FileNotFoundException)
+                        {
+                            Console.WriteLine("Employee file(s) not found!");
+                        }
+                        break;
+
+
+                    case "deny":
+                    case "d":
+                        exit = true;
+                        break;
+
+
+                    default:
+                        Program.Warning($"Invalid command! Use 'confirm' or 'deny'.");
+                        Console.ReadKey();
+                        break;
+                }
+            } while (!exit);
+        }
+
+
+        // ~ ADD PURCHASE TO EMPLOYEE'S TXT
+        public static void Transfer(string tool, int amount, string nickname)
+        {
+            try
+            {
+                List<string> tmp = new List<string>();
+                File.AppendAllText($"../../employees/{nickname}.txt", $"{tool} [{amount}]");
+
+                string[] lines = File.ReadAllLines($"../../employees/{nickname}.txt");
+                int sumAmount = 0;
+                string sumTool = "";
+
+
+                // ~ SUM PURCHASED TOOL AMOUNT
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    string[] item = lines[i].Split(' ');
+
+                    if (item.Length == 2 &&item[0].StartsWith(tool))
+                    {
+                        sumAmount += Convert.ToInt32(item[1].Trim('[', ']'));
+                        sumTool = $"{tool} [{sumAmount}]";
+                    }
+                }
+
+
+                // ~ REWRITE FILE WITH SUM AMOUNT
+                foreach (string line in lines)
+                {
+                    string[] item = line.Split(' ');
+
+                    if (tmp.Any(tmpLine => tmpLine.StartsWith(item[0])))
+                    {
+                        continue;
+                    }
+                    else if (item[0].StartsWith(tool))
+                    {
+                        tmp.Add(sumTool);
+                    }
+                    else
+                    {
+                        tmp.Add(line);
+                    }
+                }
+
+                File.WriteAllLines($"../../employees/{nickname}.txt", tmp);
+            }
+            catch (DirectoryNotFoundException)
+            {
+                Console.WriteLine("Employees directory not found!");
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine($"{nickname} file not found!");
+            }
         }
 
 
@@ -206,11 +369,11 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         {
             
             Console.Write("Old password: ");
-            string oldPassword = Console.ReadLine();
-            Console.Write("New password: ");
-            string newPassword = Console.ReadLine();
-            Console.Write("Confirm password: ");
-            string cnfPassword = Console.ReadLine();
+            string oldPassword = Login.Password();
+            Console.Write("\nNew password: ");
+            string newPassword = Login.Password();
+            Console.Write("\nConfirm password: ");
+            string cnfPassword = Login.Password();
 
 
             // ~ LOAD USER'S FILE
@@ -228,22 +391,39 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                             data[1] = newPassword;
                             employeeDatas[i] = $"{data[0]}, {data[1]}";
                             File.WriteAllLines($"../../auth.txt", employeeDatas);
-                            Console.WriteLine("Password updated successfully.");
+                            Program.Success("\nPassword updated successfully.");
                         }
 
                         else
                         {
-                            Program.Warning("New and confirm password are not matching!");
+                            Program.Warning("\nNew and confirm password are not matching!");
                         }
                     }
 
                     else
                     {
-                        Program.Warning("Wrong old password!");
+                        Program.Warning("\nWrong old password!");
                     }
                 }
             }
+            Console.ReadKey();
+        }
 
+
+        // ~ PROMPT: INFO
+        public static void Info(string tool)
+        {
+            try
+            {
+                Console.Clear();
+                string info = File.ReadAllText($"../../infos/{tool}.txt");
+                Console.WriteLine(info);
+                
+            }
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine($"{tool} file not found!");
+            }
             Console.ReadKey();
         }
     }

@@ -8,18 +8,34 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 {
     internal class Item
     {
-		private string Tool { get; set; }
-		private int Price { get; set; }
+		private string tool;
+		private int price;
 
         public Item(string tool, int price)
         {
-            Tool = tool;
-            Price = price;
+            this.tool = tool;
+            this.price = price;
         }
 
         public override string ToString()
         {
             return $"* {Tool} // Price: {Price}";
         }
+
+        public int Price
+		{
+			get { return price; }
+			set { price = value; }
+		}
+
+
+		public string Tool
+		{
+			get { return tool; }
+			set { tool = value; }
+		}
+
+
+
 	}
 }

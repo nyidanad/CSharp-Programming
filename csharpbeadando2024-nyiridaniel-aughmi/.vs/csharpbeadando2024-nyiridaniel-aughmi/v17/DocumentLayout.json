@@ -1,30 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\",
+  "WorkspaceRootPath": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|g:\\me doc\\visual studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|c:\\users\\user\\documents\\csharp-programming-main\\csharp-programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00EF03BE-F0F6-4120-9651-16AB9937D827}|csharpbeadando2024-nyiridaniel-aughmi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,87 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T16:09:15.393Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Admin.cs",
-              "RelativeDocumentMoniker": "Admin.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Admin.cs",
-              "RelativeToolTip": "Admin.cs",
-              "ViewState": "AQIAAGwAAAAAAAAAAAAUwI4AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T12:45:31.542Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f53-6d01-11d2-aa7d-00c04f990343}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\User.cs",
-              "RelativeDocumentMoniker": "User.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\User.cs",
-              "RelativeToolTip": "User.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAowHQAAAAlAAAA",
+              "DocumentIndex": 3,
+              "Title": "Item.cs",
+              "DocumentMoniker": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Item.cs",
+              "RelativeDocumentMoniker": "Item.cs",
+              "ToolTip": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Item.cs",
+              "RelativeToolTip": "Item.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T12:59:01.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Login.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Login.cs",
-              "RelativeDocumentMoniker": "Login.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Login.cs",
-              "RelativeToolTip": "Login.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T13:04:51.238Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Employee.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Employee.cs",
-              "RelativeDocumentMoniker": "Employee.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Employee.cs",
-              "RelativeToolTip": "Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-23T09:52:39.067Z"
+              "WhenOpened": "2024-03-26T11:05:45.957Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Item.cs",
-              "RelativeDocumentMoniker": "Item.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\CSharp-Programming-main\\CSharp-Programming-main\\csharpbeadando2024-nyiridaniel-aughmi\\Item.cs",
-              "RelativeToolTip": "Item.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAoAAAA",
+              "Title": "Employee.cs",
+              "DocumentMoniker": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Employee.cs",
+              "RelativeDocumentMoniker": "Employee.cs",
+              "ToolTip": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Employee.cs",
+              "RelativeToolTip": "Employee.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-24T13:40:26.843Z"
+              "WhenOpened": "2024-03-26T11:05:36.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA2wBEAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T16:09:15.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cs",
+              "DocumentMoniker": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAiwEcAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T13:04:51.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin.cs",
+              "ToolTip": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\Admin.cs",
+              "RelativeToolTip": "Admin.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T12:45:31.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "G:\\ME doc\\VIsual Studio\\repos\\csharpbeadando2024-nyiridaniel-aughmi\\User.cs",
+              "RelativeToolTip": "User.cs",
+              "ViewState": "AQIAADcBAAAAAAAAAAAowFQBAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-24T12:59:01.812Z",
+              "EditorCaption": ""
             }
           ]
         }

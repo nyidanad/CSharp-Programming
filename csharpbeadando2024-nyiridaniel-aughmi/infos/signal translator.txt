@@ -1,0 +1,5 @@
+SIGNAL TRANSLATOR
+-----------------------------------------
+Use the "transmit" command to broadcast a 
+text message to all crewmates. 
+The message must be under 10 letters.
