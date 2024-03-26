@@ -14,7 +14,7 @@
 # ----------------------------------
   Removing employee from the Company
   $ delete {id}
-  $ dde {id}
+  $ d {id}
 
 # balance
 # ----------------------------------

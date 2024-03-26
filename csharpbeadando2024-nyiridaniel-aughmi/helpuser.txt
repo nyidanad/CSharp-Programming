@@ -1,32 +1,20 @@
 # buy
 # ----------------------------------
-  Buying a tool.
-  $ buy {item} {?amount}
-  $ b {item} {?amount}
-
-# sell
-# ----------------------------------
-  Sell a tool from your storage.
-  Works only inside your storage!
-  $ sell {item} {?amount}
-  $ s {item} {?amount}
+  To purchase an item type the tool
+  name and optionally the quantity.
+  $ {tool} {?quantity}
 
 # info
 # ----------------------------------
   Information about a tool.
-  $ info {item}
-  $ i {item}
-
-# store
-# ----------------------------------
-  Going back to the shop.
-  Works only inside your storage!
-  $ store
+  $ {tool} info
+  $ {tool} i
 
 # storage
 # ----------------------------------
   Opening your storage.
   $ storage
+  $ st
 
 # password
 # ----------------------------------

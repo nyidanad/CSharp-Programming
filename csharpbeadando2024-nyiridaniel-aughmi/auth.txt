@@ -1,7 +1,3 @@
 admin, admin
 nyidan1, asd
 nyidan2, asd
-nyidan3, asd
-nyidan4, asd
-petsan1, asd
-

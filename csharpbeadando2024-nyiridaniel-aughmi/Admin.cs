@@ -104,7 +104,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                         
 
                     default:
-                        Program.Warning($"Invalid command: '{prompt[0]}'! Try the 'help' command.\n");
+                        Program.Warning($"Invalid command! Try the 'help' command.\n");
                         break;
                 }
             } while (!exit);
@@ -157,9 +157,12 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         // ~ PROMPT: List
         public static void List(ListDictionary employees)
         {
-            foreach (DictionaryEntry employee in employees)
+            ArrayList keys = new ArrayList(employees.Keys);
+            keys.Sort();
+
+            foreach (int key in keys)
             {
-                Console.WriteLine($"{(employee.Key).ToString().PadLeft(3, '0')} | {employee.Value}");
+                Console.WriteLine($"{key.ToString().PadLeft(3)} | {employees[key]}");
             }
         }
 

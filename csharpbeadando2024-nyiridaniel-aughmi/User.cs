@@ -75,6 +75,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
                         case "storage":
                         case "st":
+                            Storage(nickname);
                             break;
 
 
@@ -203,7 +204,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             foreach (Item item in items)
             {
                 string[] tools = item.ToString().ToLower().Split(new string[] { "//" }, StringSplitOptions.None);
-                string tool = tools[0].TrimStart('*', ' ').TrimEnd(' ');
+                string tool = tools[0].TrimStart('*').Trim(' ');
                 int price = Convert.ToInt32(tools[1].Replace(" price: ", ""));
                 int amount = Convert.ToInt32(chosenAmount);
 
@@ -234,6 +235,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
 
         // ~ CONFIRM PURCHASE
+        // ~ REWRITE NEW BALANCE
         public static void Confirm(string tool, int price, int amount, string nickname, Employee employee)
         {
             bool exit = false;
@@ -264,6 +266,8 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                             string[] fileData = File.ReadAllLines($"../../employees/{nickname}.txt");
                             List<string> tmp = new List<string>();
 
+                            // ~ OVERWRITE BALANCE TO NEW BALANCE
+                            // ~ KEEP ANY OTHER DATA
                             for (int i = 0; i < fileData.Length; i++)
                             {
                                 if (i == 2)
@@ -307,6 +311,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
 
         // ~ ADD PURCHASE TO EMPLOYEE'S TXT
+        // ~ SUM THE AMOUNT
         public static void Transfer(string tool, int amount, string nickname)
         {
             try
@@ -361,6 +366,32 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             {
                 Console.WriteLine($"{nickname} file not found!");
             }
+        }
+
+
+        // ~ PROMPTS: STORAGE
+        public static void Storage(string nickname)
+        {
+            string[] lines = File.ReadAllLines($"../../employees/{nickname}.txt");
+            
+            Console.Clear();
+            Console.WriteLine("There are the items in storage:");
+            Console.WriteLine("------------------------------\n");
+            if (lines.Length == 3)
+            {
+                Console.WriteLine("[No items stored]");
+            }
+            else
+            {
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    if (i > 2)
+                    {
+                        Console.WriteLine($"* {lines[i]}");
+                    }
+                }
+            }
+            Console.ReadKey();
         }
 
 
