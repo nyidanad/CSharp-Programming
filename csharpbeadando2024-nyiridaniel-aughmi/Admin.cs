@@ -101,7 +101,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                         exit = true;
                         Console.Clear();
                         break;
-                        
+
 
                     default:
                         Program.Warning($"Invalid command! Try the 'help' command.\n");
@@ -191,7 +191,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                     keys.Add(Convert.ToInt32(employee.Key));
                 }
 
-                int key =  keys.Count > 0 ? keys.Max() + 1 : 0;
+                int key = keys.Count > 0 ? keys.Max() + 1 : 0;
                 int id = ids.Count > 0 ? ids.Max() + 1 : 1;
 
                 nickname = $"{lastName}{firstName}{id}";
@@ -200,7 +200,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 // ~ADD THE NEW EMPLOYEE TO AUTH.TXT
                 string auth = $"{nickname}, {password}\n";
                 File.AppendAllText("../../auth.txt", auth);
-                
+
                 //// ~ ADD THE NEW EMPLOYEE TO EMPLOYEES
                 string text = $"{key}\n{name}\n{0}\n";
                 File.WriteAllText($"../../employees/{nickname}.txt", text);

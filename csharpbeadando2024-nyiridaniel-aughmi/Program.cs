@@ -36,6 +36,13 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             Console.ForegroundColor = ConsoleColor.Green;
         }
 
+
+        // ~ PURCHASE SOUND
+        public static void Purchase()
+        {
+            SoundPlayer purchase = new SoundPlayer("../../sounds/purchase.wav");
+            purchase.Play();
+        }
         
     }
 }

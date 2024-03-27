@@ -12,3 +12,10 @@ C:\Users\User\Documents\CSharp-Programming-main\CSharp-Programming-main\csharpbe
 C:\Users\User\Documents\CSharp-Programming-main\CSharp-Programming-main\csharpbeadando2024-nyiridaniel-aughmi\obj\Debug\csharpbeadando2024-nyiridaniel-aughmi.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\CSharp-Programming-main\CSharp-Programming-main\csharpbeadando2024-nyiridaniel-aughmi\obj\Debug\csharpbeadando2024-nyiridaniel-aughmi.exe
 C:\Users\User\Documents\CSharp-Programming-main\CSharp-Programming-main\csharpbeadando2024-nyiridaniel-aughmi\obj\Debug\csharpbeadando2024-nyiridaniel-aughmi.pdb
+G:\ME doc\VIsual Studio\repos\csharpbeadando2024-nyiridaniel-aughmi-2\bin\Debug\csharpbeadando2024-nyiridaniel-aughmi.exe.config
+G:\ME doc\VIsual Studio\repos\csharpbeadando2024-nyiridaniel-aughmi-2\bin\Debug\csharpbeadando2024-nyiridaniel-aughmi.exe
+G:\ME doc\VIsual Studio\repos\csharpbeadando2024-nyiridaniel-aughmi-2\bin\Debug\csharpbeadando2024-nyiridaniel-aughmi.pdb
+G:\ME doc\VIsual Studio\repos\csharpbeadando2024-nyiridaniel-aughmi-2\obj\Debug\csharpbeadando2024-nyiridaniel-aughmi.csproj.AssemblyReference.cache
+G:\ME doc\VIsual Studio\repos\csharpbeadando2024-nyiridaniel-aughmi-2\obj\Debug\csharpbeadando2024-nyiridaniel-aughmi.csproj.CoreCompileInputs.cache
+G:\ME doc\VIsual Studio\repos\csharpbeadando2024-nyiridaniel-aughmi-2\obj\Debug\csharpbeadando2024-nyiridaniel-aughmi.exe
+G:\ME doc\VIsual Studio\repos\csharpbeadando2024-nyiridaniel-aughmi-2\obj\Debug\csharpbeadando2024-nyiridaniel-aughmi.pdb

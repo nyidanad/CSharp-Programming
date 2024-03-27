@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace csharpbeadando2024_nyiridaniel_aughmi
 {
@@ -15,7 +9,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
     {
         public static void UserMain(string nickname)
         {
-            List<Item> items = new List<Item>();
+            CustomDictionary<int, Item> items = new CustomDictionary<int, Item>();
             Employee employee;
             bool exit = false;
 
@@ -32,9 +26,9 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 // ~ BUY, INFO PROMPT
                 if (prompt[0].Length > 2)
                 {
-                    foreach (Item item in items)
+                    foreach (var item in items)
                     {
-                        if (item.Tool.ToLower().StartsWith(prompt[0].ToLower()))
+                        if (item.Value.Tool.ToLower().StartsWith(prompt[0].ToLower()))
                         {
                             found = true;
 
@@ -42,7 +36,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                             {
                                 if (prompt[1] == "i" || prompt[1] == "info")
                                 {
-                                    Info(item.Tool.ToLower());
+                                    Info(item.Value.Tool.ToLower());
                                     break;
 
                                 }
@@ -138,7 +132,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
 
         // ~ LOAD SHOP
-        public static void loadShop(Employee employee, List<Item> items)
+        public static void loadShop(Employee employee, CustomDictionary<int, Item> items)
         {
             items.Clear();
 
@@ -159,6 +153,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 Console.WriteLine("-----------------------------\n");
 
                 string[] itemDatas = File.ReadAllLines("../../items.txt");
+                int key = 0;
 
                 foreach (string data in itemDatas)
                 {
@@ -174,7 +169,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                     {
                         string[] item = data.Split(new string[] { ", " }, StringSplitOptions.None);
                         Item newItem = new Item(item[0], Convert.ToInt32(item[1]));
-                        items.Add(newItem);
+                        items.Add(key++, newItem);
                         Console.WriteLine(newItem.ToString());
                     }
                 }
@@ -197,15 +192,14 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
 
         // ~ PROMPT: BUY
-        public static void Buy(string chosenTool, string chosenAmount, string nickname, List<Item> items, Employee employee)
+        public static void Buy(string chosenTool, string chosenAmount, string nickname, CustomDictionary<int, Item> items, Employee employee)
         {
             bool found = false;
 
-            foreach (Item item in items)
+            foreach (var item in items)
             {
-                string[] tools = item.ToString().ToLower().Split(new string[] { "//" }, StringSplitOptions.None);
-                string tool = tools[0].TrimStart('*').Trim(' ');
-                int price = Convert.ToInt32(tools[1].Replace(" price: ", ""));
+                string tool = item.Value.Tool.ToString().ToLower();
+                int price = Convert.ToInt32(item.Value.Price);
                 int amount = Convert.ToInt32(chosenAmount);
 
                 if (tool.StartsWith(chosenTool))
@@ -221,7 +215,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                         Program.Warning("Not enough money to purchase!");
                         Console.ReadKey();
                     }
-                    
+
                     break;
                 }
             }
@@ -279,9 +273,8 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                                 
                             }
 
+                            Program.Purchase();
                             File.WriteAllLines($"../../employees/{nickname}.txt", tmp);
-                            
-
                             Transfer(tool, amount, nickname);
                         }
                         catch (DirectoryNotFoundException)

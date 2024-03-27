@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="CustomDictionary.cs" />
     <Compile Include="Employee.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Login.cs" />

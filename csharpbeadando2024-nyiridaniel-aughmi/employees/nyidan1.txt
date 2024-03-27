@@ -1,6 +1,7 @@
 0
 Nyiri Daniel
-99789
+9727
 walkie-talkie [6]
-flashlight [4]
+flashlight [2]
 shovel [4]
+pro-flashlight [2]
