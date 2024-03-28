@@ -43,6 +43,5 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             SoundPlayer purchase = new SoundPlayer("../../sounds/purchase.wav");
             purchase.Play();
         }
-        
     }
 }

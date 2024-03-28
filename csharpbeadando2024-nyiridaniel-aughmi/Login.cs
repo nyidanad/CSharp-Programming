@@ -37,14 +37,13 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                             authentication = true;
                             Console.Clear();
                         }
-
                     }
 
                     if (!authentication)
                     {
                         password = "";
                         Program.Warning("\n\nUsername or password are not correct!\n" +
-                                "Please check your datas!             ");
+                                        "Please check your datas!             ");
                         Console.ReadKey();
                         Console.Clear();
                     }
@@ -73,9 +72,9 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         // ~ PRINT * INSTEAD OF PASSWORD
         public static string Password()
         {
-            
             ConsoleKeyInfo key;
             string password = "";
+            
             do
             {
                 key = Console.ReadKey(true);

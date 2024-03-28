@@ -13,7 +13,6 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             Employee employee;
             bool exit = false;
 
-
             do
             {
                 bool found = false;
@@ -38,7 +37,6 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                                 {
                                     Info(item.Value.Tool.ToLower());
                                     break;
-
                                 }
                                 else
                                 {
@@ -96,6 +94,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 
             Program.Main();
         }
+
 
         // ~ LOAD EMPLOYEE DATAS
         public static Employee loadEmployee(string nickname)
@@ -269,8 +268,8 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                                     tmp.Add((Convert.ToInt32(fileData[i]) - (price * amount)).ToString());
                                     continue;
                                 }
-                                tmp.Add(fileData[i]);
                                 
+                                tmp.Add(fileData[i]);
                             }
 
                             Program.Purchase();
@@ -384,6 +383,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                     }
                 }
             }
+            
             Console.ReadKey();
         }
 
@@ -391,7 +391,6 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
         // ~ PROMPT: PASSWORD
         public static void Password(string nickname)
         {
-            
             Console.Write("Old password: ");
             string oldPassword = Login.Password();
             Console.Write("\nNew password: ");
@@ -448,6 +447,7 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             {
                 Console.WriteLine($"{tool} file not found!");
             }
+            
             Console.ReadKey();
         }
     }

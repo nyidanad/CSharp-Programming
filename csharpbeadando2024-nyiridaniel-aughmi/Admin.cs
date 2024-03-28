@@ -197,14 +197,16 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
                 nickname = $"{lastName}{firstName}{id}";
 
 
-                // ~ADD THE NEW EMPLOYEE TO AUTH.TXT
+                // ~ ADD THE NEW EMPLOYEE TO AUTH.TXT
                 string auth = $"{nickname}, {password}\n";
                 File.AppendAllText("../../auth.txt", auth);
 
-                //// ~ ADD THE NEW EMPLOYEE TO EMPLOYEES
+
+                // ~ ADD THE NEW EMPLOYEE TO EMPLOYEES
                 string text = $"{key}\n{name}\n{0}\n";
                 File.WriteAllText($"../../employees/{nickname}.txt", text);
                 Program.Success($"User: {nickname} added successfully!\n");
+
 
                 // ~ RELOADING THE EMPLOYEES
                 LoadEmployees(employees);

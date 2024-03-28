@@ -28,14 +28,10 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
 			set { price = value; }
 		}
 
-
 		public string Tool
 		{
 			get { return tool; }
 			set { tool = value; }
 		}
-
-
-
 	}
 }

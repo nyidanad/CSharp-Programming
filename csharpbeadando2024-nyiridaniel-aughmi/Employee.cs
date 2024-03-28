@@ -41,6 +41,5 @@ namespace csharpbeadando2024_nyiridaniel_aughmi
             get { return balance; }
             set { balance = value; }
         }
-
     }
 }
